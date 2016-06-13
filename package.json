@@ -5,16 +5,14 @@
   "main": "index.js",
   "scripts": {
     "lint": "textlint --experimental README.md SUMMARY.md tldr",
-    "build": "gitbook build",
     "serve": "gitbook serve",
-    "test": "npm-run-all -p build lint"
+    "test": "npm run lint"
   },
   "author": "shun.sato <shun.sato@fenneclab.com>",
   "repository": "satoshun00/aws-short-handbook",
   "license": "MIT",
   "devDependencies": {
     "gitbook-cli": "2.2.0",
-    "npm-run-all": "2.1.2",
     "textlint": "6.11.1",
     "textlint-filter-rule-comments": "1.2.1",
     "textlint-rule-max-kanji-continuous-len": "1.0.1",
