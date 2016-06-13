@@ -1,0 +1,27 @@
+{
+  "name": "aws-short-handbook",
+  "version": "1.0.0",
+  "description": "AWSの短い説明書",
+  "main": "index.js",
+  "scripts": {
+    "lint": "textlint --experimental README.md SUMMARY.md tldr",
+    "serve": "gitbook serve",
+    "test": "npm run lint"
+  },
+  "author": "shun.sato <shun.sato@fenneclab.com>",
+  "repository": "satoshun00/aws-short-handbook",
+  "license": "MIT",
+  "devDependencies": {
+    "gitbook-cli": "2.2.0",
+    "textlint": "6.11.1",
+    "textlint-filter-rule-comments": "1.2.1",
+    "textlint-rule-max-kanji-continuous-len": "1.0.1",
+    "textlint-rule-no-dead-link": "0.2.0",
+    "textlint-rule-no-double-negative-ja": "1.0.4",
+    "textlint-rule-no-dropping-the-ra": "1.0.2",
+    "textlint-rule-no-start-duplicated-conjunction": "1.0.7",
+    "textlint-rule-sjsj": "1.0.5",
+    "textlint-rule-spellcheck-tech-word": "5.0.0",
+    "textlint-rule-web-plus-db": "1.1.5"
+  }
+}
