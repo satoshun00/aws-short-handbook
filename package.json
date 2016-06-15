@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "textlint --experimental README.md SUMMARY.md tldr",
     "serve": "gitbook serve",
-    "test": "npm run lint"
+    "build": "gitbook build",
+    "test": "npm run lint && npm run build"
   },
   "author": "shun.sato <shun.sato@fenneclab.com>",
   "repository": "satoshun00/aws-short-handbook",
