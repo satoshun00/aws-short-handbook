@@ -1,5 +1,6 @@
 # サービス/リソース
 
+
 サービスは[サービス一覧](http://aws.amazon.com/jp/about-aws/global-infrastructure/regional-product-services/)に示される、AWSの製品名を指す。
 
 AWSのサービスはリソースを作成することで機能する。
@@ -15,9 +16,9 @@ Auto Scaling # 'オートスケーリング'というサービス
   - ScheduledAction
 ```
 
-## リソース
+AWSのサービスは多いが、他のサービスやリソースを単にラップして使いやすくしたようなサービスもある。(ElasticBeanstalk, ECS, EMR)
 
-AWSのサービスを使うには、リソースを理解すると良い。
+AWSのサービスを使うには、リソースから理解すると良い。
 
 リソースは以下のツールで操作できる。
 
