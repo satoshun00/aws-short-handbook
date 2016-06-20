@@ -4,7 +4,7 @@
   "description": "AWSの短い説明書",
   "main": "index.js",
   "scripts": {
-    "lint": "textlint --experimental README.md SUMMARY.md tldr",
+    "lint": "textlint --experimental README.md SUMMARY.md tldr appendix",
     "serve": "gitbook serve",
     "build": "gitbook build",
     "test": "npm run lint && npm run build"

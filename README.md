@@ -2,6 +2,8 @@
 
 > AWSの短い説明書。まだ、個人的なまとめ。諸事情につき執筆中ながら、公開しております。
 
+Source: https://github.com/satoshun00/aws-short-handbook
+
 ## イントロダクション
 
 **この説明書で書くこと**
