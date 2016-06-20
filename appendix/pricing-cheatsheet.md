@@ -8,39 +8,32 @@
 
 ## 静的ウェブサイト[S3+CloudFront+Route53]
 
-**前提**
+**想定**
 
-- CloudFrontのオリジンにウェブサイトホスティング設定のS3を配置
-- 1ページビューあたりの転送量を`728.4KB`<sup>*</sup>、リクエストオブジェクト数を`5個`とする
-- 全てのページが同じ転送量とする
-- 全てのページのコンテンツのキャッシュ時間を`1日`とする(`Cahche-Control: max-age=86400`)
-- CloudFrontでオブジェクトがキャッシュされているため、S3オリジンへのアクセス回数を月間`30回`(1日1回)とする
-- 全部で`100オブジェクト`(html, css, image)で構成されるサイトとし、1オブジェクトあたり`99.3KB`とする
-- デプロイにて月間`4回`全オブジェクトの更新を行うものとする
-- ページビューのうち、日本70%、アメリカ30%からのアクセスとする
-- リージョンは`ap-northeast-1(Tokyo)`とする
-- `5,000ページビュー/日`くらいのウェブサイトである
+`5,000ページビュー/日`くらいの静的ウェブサイト
 
-<sup>*</sup>_[Qiita](http://qiita.com/)の適当なページを幾つか[サンプリングし平均化して算出](https://docs.google.com/spreadsheets/d/1IryHwstCkwgHpm9iMjaUd-qVm2MN3BObLsN8FD80wJA/edit?usp=sharing)_
-
-**料金シュミレート(`150,000ページビュー/month`)**
-
-- S3保有オブジェクト容量(GB): `100オブジェクト` * `99.3KB` / 1024 / 1024 = `0.009GB`
-- S3PUTリクエスト数: `100オブジェクト` * `デプロイ4回` = `400リクエスト`
-- S3GETリクエスト数: `5個` * `30回` = `150リクエスト`
-- CloudFront転送量(GB): `150,000ページビュー` * `728.4KB` / 1024 / 1024 = `104GB`
-- Route53クエリ数(回): `150,000ページビュー` * `5個` = `750,000回`
-
-[見積もり結果](http://calculator.s3.amazonaws.com/index.html?lng=ja_JP#r=NRT&key=calc-980C2AB9-378A-4559-A5F5-06E66A850BA4)
-
-| サービス                  | 料金(USD) |
-|:--------------------------|:----------|
-| Amazon S3 Service（日本） | 0.02      |
-| Amazon Route 53 サービス  | 0.80      |
-| Amazon CloudFront Service | 13.00     |
-| 合計                      | 13.82     |
+| サービス                  | 料金($/月) |
+|:--------------------------|:-------------|
+| Amazon S3 Service（日本） | 0.02         |
+| Amazon Route 53 サービス  | 0.80         |
+| Amazon CloudFront Service | 13.00        |
+| 合計                      | 13.82        |
 
 ---
 
-- [Qiitaのページサンプリング計算に使ったシート(Google SpreadSheet)](https://docs.google.com/spreadsheets/d/1IryHwstCkwgHpm9iMjaUd-qVm2MN3BObLsN8FD80wJA/edit?usp=sharing)
-- [AWSカリキュレーター](http://calculator.s3.amazonaws.com/index.html?lng=ja_JP)
+**シュミレート詳細**
+
+[見積もり結果](http://calculator.s3.amazonaws.com/index.html?lng=ja_JP#r=NRT&key=calc-980C2AB9-378A-4559-A5F5-06E66A850BA4)
+
+- S3オブジェクト1オブジェクトあたり: `99.3KB`<sup>*1</sup>
+- CloudFront転送量(GB): `150,000ページビュー` x `728.4KB` = `104GB`<sup>*1</sup>
+- S3PUTリクエスト数: `100オブジェクト` x `デプロイ4回` = `400リクエスト`<sup>*2</sup>
+- S3GETリクエスト数: `5オブジェクト` x `30回` = `150リクエスト`<sup>*3</sup>
+- Route53クエリ数(回): `150,000ページビュー` x `5オブジェクト` = `750,000回`<sup>*1</sup>
+- S3保有オブジェクト容量(GB): `100オブジェクト` x `99.3KB` = `0.009GB`<sup>*1</sup>
+
+<sup>*1</sup>_転送量やオブジェクト数の値は、[Qiita](http://qiita.com/)の適当なページを幾つか[サンプリングし平均化して算出](https://docs.google.com/spreadsheets/d/1IryHwstCkwgHpm9iMjaUd-qVm2MN3BObLsN8FD80wJA/edit?usp=sharing)_
+
+<sup>*2</sup>_S3に保存されているオブジェクトの数を100オブジェクト、月間デプロイ回数を4回としている_
+
+<sup>*3</sup>_CloudFrontのキャッシュ有効期限を仮に1日と想定(S3オリジンへのアクセス回数は1日に1回)_
