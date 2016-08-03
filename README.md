@@ -17,3 +17,7 @@ Source: https://github.com/satoshun00/aws-short-handbook
 - AWSのはじめかた
 - ○○をつかってみた
 - 各サービスの細かい設定項目とかAPIの説明
+
+**対象とする読者**
+
+- インフラエンジニアではないが、AWSのサービスを利用したい

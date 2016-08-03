@@ -7,5 +7,8 @@
   * [アカウント](tldr/account.md)
   * [料金](tldr/pricing.md)
   * [情報の探し方](tldr/searching.md)
+* [サービス](services/README.md)
+  * [IAM](services/iam.md)
+  * [VPC](services/vpc.md)
 * [付録](appendix/README.md)
   * [AWS料金チートシート](appendix/pricing-cheatsheet.md)
