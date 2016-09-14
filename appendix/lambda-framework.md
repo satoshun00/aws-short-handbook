@@ -4,6 +4,9 @@
 
 Lambdaに関する説明は[サービス/Lambda](../services/lambda.md)を参照のこと。
 
+- [apex](#apex)
+- [serverless](#serverless)
+
 ## [apex](http://apex.run/)
 
 Github: [apex/apex](https://github.com/apex/apex) <iframe src="https://ghbtns.com/github-btn.html?user=apex&repo=apex&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
@@ -79,7 +82,7 @@ Austenは[Amazon re:invent 2015のLambdaセッション](https://aws.amazon.com/
 - Node.jsで書かれたフレームワーク
 - Lambda関数のデプロイ、実行を管理できる
 - イベントソースマッピングの作成もサポート。簡単な設定ファイルでイベントソースとLambda関数の紐付けを行ってくれる
-- Lambda関数を取り巻く環境構築を全てラップしており、内部的にはCloudFormationテンプレートを作成してスタックを作成する
+- Lambda関数を取り巻く環境構築を全てラップしており、内部的にはCloudFormationテンプレートを自動生成してスタックを構築する
 - デプロイライフサイクル中に実行されるプラグインを作成できるので、ビルド手順のカスタマイズが出来る
 - `stage`パラメーターでstage/prodのような環境分岐が出来る<sup>*</sup>
 
