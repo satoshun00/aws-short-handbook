@@ -9,6 +9,7 @@
 <!-- textlint-enable no-dead-link -->
 
 ~~※CloudFormationは[Release History](http://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/ReleaseHistory.html)を別途持つため注意~~
+
 <!-- textlint-disable no-dead-link -->
 ※CloudFormationの更新履歴は[AWS Developer Forums: AWS CloudFormation](https://forums.aws.amazon.com/forum.jspa?forumID=92)にて告知されている
 <!-- textlint-enable no-dead-link -->

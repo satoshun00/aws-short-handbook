@@ -10,5 +10,7 @@
 * [サービス](services/README.md)
   * [IAM](services/iam.md)
   * [VPC](services/vpc.md)
+  * [Lambda](services/lambda.md)
 * [付録](appendix/README.md)
   * [AWS料金チートシート](appendix/pricing-cheatsheet.md)
+  * [Lambdaのフレームワーク](appendix/lambda-framework.md)
